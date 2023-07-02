@@ -53,5 +53,12 @@ npm-debug.*
 web-build/
 cache/
 
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
-apps/undefined-e2e/artifacts
+apps/my-expo-app-e2e/artifacts

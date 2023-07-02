@@ -2,7 +2,6 @@
   "name": "@tamagui-nx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
   "dependencies": {
     "@expo/metro-config": "0.7.1",

@@ -1,0 +1,107 @@
+{
+  "testRunner": {
+    "args": {
+      "$0": "jest",
+      "config": "./jest.config.json"
+    },
+    "jest": {
+      "setupTimeout": 120000
+    }
+  },
+  "apps": {
+    "ios.debug": {
+      "type": "ios.app",
+      "build": "cd ../../apps/my-expo-app/ios && xcodebuild -workspace MyExpoApp.xcworkspace -scheme MyExpoApp -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' -derivedDataPath ./build -quiet",
+      "binaryPath": "../../apps/my-expo-app/ios/build/Build/Products/Debug-iphonesimulator/MyExpoApp.app"
+    },
+    "ios.release": {
+      "type": "ios.app",
+      "build": "cd ../../apps/my-expo-app/ios && xcodebuild -workspace MyExpoApp.xcworkspace -scheme MyExpoApp -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' -derivedDataPath ./build -quiet",
+      "binaryPath": "../../apps/my-expo-app/ios/build/Build/Products/Release-iphonesimulator/MyExpoApp.app"
+    },
+
+    "ios.eas": {
+      "type": "ios.app",
+      "build": "npx nx run my-expo-app:download --platform ios --distribution simulator --output=../../apps/my-expo-app/dist/",
+      "binaryPath": "../../apps/my-expo-app/dist/MyExpoApp.app"
+    },
+    "ios.local": {
+      "type": "ios.app",
+      "build": "npx nx run my-expo-app:build --platform ios --profile preview --wait --local --no-interactive --output=../../apps/my-expo-app/dist/MyExpoApp.tar.gz",
+      "binaryPath": "../../apps/my-expo-app/dist/MyExpoApp.app"
+    },
+
+    "android.debug": {
+      "type": "android.apk",
+      "build": "cd ../../apps/my-expo-app/android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
+      "binaryPath": "../../apps/my-expo-app/android/app/build/outputs/apk/debug/app-debug.apk"
+    },
+    "android.release": {
+      "type": "android.apk",
+      "build": "cd ../../apps/my-expo-app/android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release",
+      "binaryPath": "../../apps/my-expo-app/android/app/build/outputs/apk/release/app-release.apk"
+    },
+
+    "android.eas": {
+      "type": "android.apk",
+      "build": "npx nx run my-expo-app:download --platform android --distribution simulator --output=../../apps/my-expo-app/dist/",
+      "binaryPath": "../../apps/my-expo-app/dist/MyExpoApp.apk"
+    },
+    "android.local": {
+      "type": "android.apk",
+      "build": "npx nx run my-expo-app:build --platform android --profile preview --wait --local --no-interactive --output=../../apps/my-expo-app/dist/MyExpoApp.apk",
+      "binaryPath": "../../apps/my-expo-app/dist/MyExpoApp.apk"
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 14"
+      }
+    },
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "Pixel_4a_API_30"
+      }
+    }
+  },
+  "configurations": {
+    "ios.sim.release": {
+      "device": "simulator",
+      "app": "ios.release"
+    },
+    "ios.sim.debug": {
+      "device": "simulator",
+      "app": "ios.debug"
+    },
+
+    "ios.sim.eas": {
+      "device": "simulator",
+      "app": "ios.eas"
+    },
+    "ios.sim.local": {
+      "device": "simulator",
+      "app": "ios.local"
+    },
+
+    "android.emu.release": {
+      "device": "emulator",
+      "app": "android.release"
+    },
+    "android.emu.debug": {
+      "device": "emulator",
+      "app": "android.debug"
+    },
+
+    "android.emu.eas": {
+      "device": "emulator",
+      "app": "android.eas"
+    },
+    "android.emu.local": {
+      "device": "emulator",
+      "app": "android.local"
+    }
+  }
+}

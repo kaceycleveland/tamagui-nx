@@ -1,7 +1,7 @@
 {
-  "name": "undefined",
+  "name": "my-expo-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/undefined/src",
+  "sourceRoot": "apps/my-expo-app/src",
   "projectType": "application",
   "targets": {
     "start": {
@@ -13,7 +13,7 @@
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "nx start undefined"
+        "command": "nx start my-expo-app"
       }
     },
     "run-ios": {
@@ -43,7 +43,7 @@
     "download": {
       "executor": "@nx/expo:download",
       "options": {
-        "output": "apps/undefined/dist"
+        "output": "apps/my-expo-app/dist"
       }
     },
     "sync-deps": {
@@ -70,7 +70,7 @@
       "executor": "@nx/expo:export",
       "options": {
         "platform": "all",
-        "outputDir": "../../dist/apps/undefined"
+        "outputDir": "../../dist/apps/my-expo-app"
       }
     },
     "export-web": {
@@ -83,14 +83,14 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/undefined/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/my-expo-app/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/undefined/jest.config.ts",
+        "jestConfig": "apps/my-expo-app/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

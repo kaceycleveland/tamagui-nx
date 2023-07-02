@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'undefined',
+  displayName: 'my-expo-app',
   resolver: '@nx/jest/plugins/resolver',
   preset: 'jest-expo',
   transformIgnorePatterns: [

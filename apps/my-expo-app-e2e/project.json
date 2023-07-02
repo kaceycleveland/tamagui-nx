@@ -1,7 +1,7 @@
 {
-  "name": "undefined-e2e",
+  "name": "my-expo-app-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/undefined-e2e/src",
+  "sourceRoot": "apps/my-expo-app-e2e/src",
   "projectType": "application",
   "targets": {
     "build-ios": {
@@ -25,20 +25,20 @@
       "executor": "@nx/detox:test",
       "options": {
         "detoxConfiguration": "ios.sim.eas",
-        "buildTarget": "undefined-e2e:build-ios"
+        "buildTarget": "my-expo-app-e2e:build-ios"
       },
       "configurations": {
         "local": {
           "detoxConfiguration": "ios.sim.local",
-          "buildTarget": "undefined-e2e:build-ios:local"
+          "buildTarget": "my-expo-app-e2e:build-ios:local"
         },
         "bare": {
           "detoxConfiguration": "ios.sim.debug",
-          "buildTarget": "undefined-e2e:build-ios:bare"
+          "buildTarget": "my-expo-app-e2e:build-ios:bare"
         },
         "production": {
           "detoxConfiguration": "ios.sim.release",
-          "buildTarget": "undefined-e2e:build-ios:production"
+          "buildTarget": "my-expo-app-e2e:build-ios:production"
         }
       }
     },
@@ -63,20 +63,20 @@
       "executor": "@nx/detox:test",
       "options": {
         "detoxConfiguration": "android.emu.eas",
-        "buildTarget": "undefined-e2e:build-android"
+        "buildTarget": "my-expo-app-e2e:build-android"
       },
       "configurations": {
         "local": {
           "detoxConfiguration": "android.emu.local",
-          "buildTarget": "undefined-e2e:build-android:local"
+          "buildTarget": "my-expo-app-e2e:build-android:local"
         },
         "bare": {
           "detoxConfiguration": "android.emu.debug",
-          "buildTarget": "undefined-e2e:build-android:bare"
+          "buildTarget": "my-expo-app-e2e:build-android:bare"
         },
         "production": {
           "detoxConfiguration": "android.emu.release",
-          "buildTarget": "undefined-e2e:build-android:production"
+          "buildTarget": "my-expo-app-e2e:build-android:production"
         }
       }
     },
@@ -84,10 +84,10 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/undefined-e2e/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/my-expo-app-e2e/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["undefined"]
+  "implicitDependencies": ["my-expo-app"]
 }
