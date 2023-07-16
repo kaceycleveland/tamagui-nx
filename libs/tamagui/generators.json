@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "create-next": {
+      "factory": "./src/generators/create-next/generator",
+      "schema": "./src/generators/create-next/schema.json",
+      "description": "create-next generator"
+    }
+  }
+}
